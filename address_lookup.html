@@ -11,31 +11,19 @@
 async function searchKeyword(q) {
     const url = 'https://partnerportal.testworld.co.nz/PartnerPortal/s/sfsites/aura?r=9&aura.ApexAction.execute=1';
     const headers = {
+        'authority': 'partnerportal.testworld.co.nz',
+        'method': 'POST',
+        'path': '/PartnerPortal/s/sfsites/aura?r=9&aura.ApexAction.execute=1',
+        'scheme': 'https',
         'accept': '*/*',
         'accept-encoding': 'gzip, deflate, br, zstd',
         'accept-language': 'en-GB,en-US;q=0.9,en;q=0.8',
         'content-length': '883',
-        'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
-        'cookie': 'renderCtx=%7B%22pageId%22%3A%224a9d047e-740b-4984-84b7-67521a4f6e63%22%2C%22schema%22%3A%22Published%22%2C%22viewType%22%3A%22Published%22%2C%22brandingSetId%22%3A%2266bf9d04-72b3-455c-83be-c21ed6560226%22%2C%22audienceIds%22%3A%22%22%7D; CookieConsentPolicy=0:1; LSKey-c$CookieConsentPolicy=0:1; oid=00DBS000000vxTB; pctrk=f852129e-09be-4125-9e06-6bad228feba2; _ga=GA1.1.1479746213.1742436097; _ga_KQWCRDQQLW=GS1.1.1742436096.1.0.1742436098.0.0.0; _fbp=fb.2.1742948808581.648331177212024998; ak_bmsc=4E7D5B93BF3154685D44BCD7E644AD18~000000000000000000000000000000~YAAQubbRF8YyVQOWAQAAtmDFEhvIZcb6VWJt69eqvCAMwsU845wpMKhzMgyV6o4TGbpJQuWd0bejMWwSipZ8GlF0iPin4bcdmol1N9f4kCHnP7dC8nkbRzQYD/PN/S/3d96+12HutFiQf7HduI0wOWoXhpRiDztyA8PVqlGqGmjDo6IbnVgUEC8gM2iJbo76DAVQFXgz3TcCx+wBnfI1M8ATa9LmIt1ifnI2/Pc2Rku6tOgcAnjI1qGVoSlEnXL+9qbJDW+/6uyaQ6qNOPCZ3OYMm64unG4nRSFQvrUHLCbiNP1PsZIsL8iDOPkimayKsUfLCuPEiaH3TyxEDBDjK+v8myYAvXlPU548JOQzjOIunNh1unktuy374t+1iXdL0sZJUvoNDx8HlBkPWL+EAII=; bm_sv=CAEE3A672681018E8768C11A14B2DA47~YAAQubbRF1Y0VQOWAQAAfMTFEhvlD5BYyWD6mjTGKCY/LmKhdQF8Yxvun9yOtypZvKJkp1DvtYQXYLlNNZCAWqg9N+7N3qGPYfeco6HxhdWxjFlUdgrHrcVtcFuyhWRizMkAZJyVzb+ZrvbQTKazMKBQGjHsy6KN4ODbJSB7fL8LDwmS03FD198b3kbfAVM/m9u2lryHyRtzMMjgFXxdybvQDrNE8eQJCZOQB/jylTsuvgqH+bQyL/E7yOfEp+HMEjUFYEs=~1',
-        'origin': 'https://partnerportal.testworld.co.nz',
-        'referer': 'https://partnerportal.testworld.co.nz/PartnerPortal/s/el-new-connection',
-        'sec-ch-ua': '"Chromium";v="134", "Not:A-Brand";v="24", "Google Chrome";v="134"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-        'sec-fetch-dest': 'empty',
-        'sec-fetch-mode': 'cors',
-        'sec-fetch-site': 'same-origin',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36',
-        'x-b3-sampled': '0',
-        'x-b3-spanid': 'c70d1d2db54deedc',
-        'x-b3-traceid': 'f0ea92b0b46149e0',
-        'x-sfdc-lds-endpoints': 'ApexActionController.execute:ApplicationFlowAddressController.findAddress',
-        'x-sfdc-page-scope-id': '72fefd6c-b951-4db1-8ea2-a9367b4f0586',
-        'x-sfdc-request-id': '355182000004fdf3eb'
+        'content-type': 'application/x-www-form-urlencoded; charset=UTF-8'
     };
 
 
-    const body = `message=%7B%22actions%22%3A%5B%7B%22id%22%3A%22201%3Ba%22%2C%22descriptor%22%3A%22aura%3A%2F%2FApexActionController%2FACTION%24execute%22%2C%22callingDescriptor%22%3A%22UNKNOWN%22%2C%22params%22%3A%7B%22namespace%22%3A%22%22%2C%22classname%22%3A%22ApplicationFlowAddressController%22%2C%22method%22%3A%22findAddress%22%2C%22params%22%3A%7B%22keywords%22%3A%22${encodeURIComponent(q)}%22%7D%2C%22cacheable%22%3Afalse%2C%22isContinuation%22%3Afalse%7D%7D%5D%7D&aura.context=%7B%22mode%22%3A%22PROD%22%2C%22fwuid%22%3A%22c1ItM3NYNWFUOE5oQkUwZk1sYW1vQWg5TGxiTHU3MEQ5RnBMM0VzVXc1cmcxMS4zMjc2OC4z%22%2C%22app%22%3A%22siteforce%3AcommunityApp%22%2C%22loaded%22%3A%7B%22APPLICATION%40markup%3A%2F%2Fsiteforce%3AcommunityApp%22%3A%221237_QCP5Ih0RUYVLF144CXYCOA%22%7D%2C%22dn%22%3A%5B%5D%2C%22globals%22%3A%7B%7D%2C%22uad%22%3Atrue%7D&aura.pageURI=%2FPartnerPortal%2Fs%2Fel-new-connection&aura.token=null`;
+    const body = 'message=%7B%22actions%22%3A%5B%7B%22id%22%3A%22201%3Ba%22%2C%22descriptor%22%3A%22aura%3A%2F%2FApexActionController%2FACTION%24execute%22%2C%22callingDescriptor%22%3A%22UNKNOWN%22%2C%22params%22%3A%7B%22namespace%22%3A%22%22%2C%22classname%22%3A%22ApplicationFlowAddressController%22%2C%22method%22%3A%22findAddress%22%2C%22params%22%3A%7B%22keywords%22%3A%2238%20kenepuru%22%7D%2C%22cacheable%22%3Afalse%2C%22isContinuation%22%3Afalse%7D%7D%5D%7D&aura.context=%7B%22mode%22%3A%22PROD%22%2C%22fwuid%22%3A%22c1ItM3NYNWFUOE5oQkUwZk1sYW1vQWg5TGxiTHU3MEQ5RnBMM0VzVXc1cmcxMS4zMjc2OC4z%22%2C%22app%22%3A%22siteforce%3AcommunityApp%22%2C%22loaded%22%3A%7B%22APPLICATION%40markup%3A%2F%2Fsiteforce%3AcommunityApp%22%3A%221237_QCP5Ih0RUYVLF144CXYCOA%22%7D%2C%22dn%22%3A%5B%5D%2C%22globals%22%3A%7B%7D%2C%22uad%22%3Atrue%7D&aura.pageURI=%2FPartnerPortal%2Fs%2Fel-new-connection&aura.token=null';
 
     try {
         const response = await fetch(url, {
